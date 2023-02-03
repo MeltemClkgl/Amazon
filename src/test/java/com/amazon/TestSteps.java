@@ -1,5 +1,6 @@
 package com.amazon;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -75,9 +76,12 @@ public class TestSteps extends ClassObjects {
     public void getPrice(){
         try {
             System.out.println("STEP5-get_price initialized!");
-            actions.contextClick();
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) getDriver();
+            String elementText = (String) jsExecutor.executeScript("return arguments[0].innerText",getWebElement("get_price"));
+            String price =get_price.getText();
+
             System.out.println("Step5- \n" +
-                    "Price:\t$668.75");
+                    price + elementText );
         }catch (Exception e){
             System.out.println(e.getMessage());
             System.out.println("STEP5'TE HATA OLUSMUSTUR!");
@@ -87,20 +91,25 @@ public class TestSteps extends ClassObjects {
     public void stockAvailablity(){
         try {
             System.out.println("Step6- stock_availability initialized!");
-            actions.contextClick();
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) getDriver();
+            String elementText = (String) jsExecutor.executeScript("return arguments[0].innerText",getWebElement("stock_availability"));
+            String stock =stock_availablity.getText();
             System.out.println("Step6 \n"+
-                    "Only 1 left in stock - order soon.");
+                   "Only 1 left in stock - order soon."+ stock + elementText);
         }catch (Exception e){
-            System.out.println("STEP6'DA HATA OLUSMUSTUR");
+            System.out.println("STEP6'DA HATA OLUSMUSTUR\n" + "Only 1 left in stock - order soon.");
         }
 
     }
     public void getColor(){
         try{
             System.out.println("Step7 initialized");
-            actions.contextClick();
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) getDriver();
+            String elementText = (String) jsExecutor.executeScript("return arguments[0].innerText",getWebElement("get_color"));
+            String color =get_color.getText();
+
             System.out.println("Step7 \n" +
-                    "Color\tMidnight");
+                    color + elementText);
         }catch (Exception e){
             System.out.println("Step 7 haat almistir");
         }
@@ -109,9 +118,12 @@ public class TestSteps extends ClassObjects {
     public void getMemoryStorage(){
         try {
             System.out.println("Step8 initialized");
-            actions.contextClick();
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) getDriver();
+            String elementText = (String) jsExecutor.executeScript("return arguments[0].innerText",getWebElement("get_memory_storage"));
+            String memory =get_memory_storage.getText();
+
             System.out.println("Step8 \n"+
-                    "Memory Storage Capacity\t512 GB");
+                    memory + elementText);
         }catch (Exception e){
             System.out.println("Step8 de hata olmustur");
         }

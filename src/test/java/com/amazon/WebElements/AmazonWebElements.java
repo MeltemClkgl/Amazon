@@ -33,16 +33,22 @@ public class AmazonWebElements {
                 element=getDriver().findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/div/div/div/div[2]/div/div/div[1]/h2/a/span"));break;
 
             case "get_price":
-                element=getDriver().findElement(By.xpath("//*[@id=\"corePrice_feature_div\"]/div/span/span"));break;
+                get_price=getDriver().findElement(By.xpath("//*[@id=\"corePrice_feature_div\"]/div/span"));
+                element=get_price;break;
+
 
             case  "stock_availablity":
-                element=getDriver().findElement(By.xpath("//*[@id=\"availability\"]/span"));break;
+                stock_availablity=getDriver().findElement(By.xpath("//*[@id=\"availabilityInsideBuyBox_feature_div\"]/div"));
+                element=stock_availablity;break;
+
 
             case "get_color":
-                element=getDriver().findElement(By.xpath("//*[@id=\"poExpander\"]/div[1]/div/table/tbody/tr[7]/td[2]/span"));break;
+                get_color=getDriver().findElement(By.xpath("//*[@id=\"poExpander\"]/div[1]/div/table/tbody/tr[7]/td[2]/span"));
+                element=get_color;break;
 
             case "get_memory_storage":
-                element=getDriver().findElement(By.xpath("//*[@id=\"poExpander\"]/div[1]/div/table/tbody/tr[5]/td[2]/span"));break;
+                get_memory_storage=getDriver().findElement(By.xpath("//*[@id=\"poExpander\"]/div[1]/div/table/tbody/tr[5]/td[2]/span"));
+                element=get_memory_storage;break;
 
 
 
